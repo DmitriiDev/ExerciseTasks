@@ -7,7 +7,7 @@ public class CollectionsSort {
     public Set<String> foundSameWord(String[] arrayWords) {
         Set<String> collectSameWord = new LinkedHashSet<>();
 
-        //какой вариант лучше? добавлять в коллекцию через add или addAll
+        //какой вариант лучше? добавлять в коллекцию через add или addAll // общее правило: Если есть готовая функция "one-liner", то лучше использовать ее.
         collectSameWord.addAll(Arrays.asList(arrayWords));
 
        /* for (String str : arrayWords) {
@@ -64,3 +64,22 @@ public class CollectionsSort {
 
     }
 }
+
+/*Моя реализация*/
+/*Создать массив с набором слов (10-20 слов, должны встречаться повторяющиеся). Найти и вывести список уникальных слов,
+ из которых состоит массив (дубликаты не считаем). Посчитать сколько раз встречается каждое слово*/
+public class Task1 {
+    public static void main(String[] args) {
+        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("A", "B", "c", "A", "B", "c", "A", "B", "c", "A", "B", "c"));
+        HashMap<String, Integer> map = new HashMap<>();
+        for (String s : arrayList) {
+            if (!map.containsKey(s))
+                map.put(s, 1);
+            else
+                map.put(s, map.get(s) + 1);
+        }
+        System.out.println(map);
+    }
+}
+
+
