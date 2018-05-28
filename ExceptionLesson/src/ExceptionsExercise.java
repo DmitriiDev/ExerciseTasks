@@ -1,10 +1,7 @@
 public class ExceptionsExercise {
-
-
     public void doubleStringArray (String[][] smthg) throws MyArraySizeException, MyArrayDataException{
-
-
-        if(smthg.length > 4) throw new MyArraySizeException();
+        if(smthg.length > 4)//Try to avoid "magic numbers"
+            throw new MyArraySizeException();//better on the next line
         Integer sum = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
